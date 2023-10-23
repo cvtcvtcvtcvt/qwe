@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+void drawHorizontalLine(int size, char symbol)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << symbol;
+    }
+    cout << endl;
+}
+
+void drawVerticalLine(int size, char symbol)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << symbol << endl;
+    }
+}
+
+int main()
+{
+    setlocale(0, "");
+    int choice;
+    char symbol;
+    int size;
+
+    while (true)
+    {
+        cout << "1. Нарисовать горизонтальную линию" << endl;
+        cout << "2. Нарисовать вертикальную линию" << endl;
+        cout << "3. Выход" << endl;
+        cout << "Выберите действие: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Введите размер линии: ";
+            cin >> size;
+            cout << "Введите символ для рисования линии: ";
+            cin >> symbol;
+            cout << "Горизонтальная линия:" << endl;
+            drawHorizontalLine(size, symbol);
+            break;
+
+        case 2:
+            cout << "Введите размер линии: ";
+            cin >> size;
+            cout << "Введите символ для рисования линии: ";
+            cin >> symbol;
+            cout << "Вертикальная линия:" << endl;
+            drawVerticalLine(size, symbol);
+            break;
+
+        case 3:
+            return 0;
+
+        default:
+            cout << "Неверный выбор. Попробуйте снова." << endl;
+            break;
+        }
+
+     
+        cout << endl;
+        system("clear");
+    }
+
+    return 0;
+}
